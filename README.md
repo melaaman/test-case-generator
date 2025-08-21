@@ -20,6 +20,12 @@ A tool to automatically generate structured test cases from requirements.
 
    # Generate test cases and save to CSV file
    python -m src.main --csv
+
+   # Generate test cases with a test scenario name
+   python -m src.main --test-scenario "My test scenario"
+
+   # Generate test cases with scenario and save to CSV
+   python -m src.main --test-scenario "My test scenario" --csv
    ```
 
 The generated test cases will include:
