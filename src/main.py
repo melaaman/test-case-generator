@@ -19,12 +19,12 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    requirements = load_requirements()
+    requirement = load_requirements()
 
     if args.csv:
-        export_to_csv(requirements, args.test_scenario)
+        export_to_csv(requirement, args.test_scenario)
     else:
-        display_requirement(requirements, args.test_scenario)
+        display_requirement(requirement, args.test_scenario)
 
 
 if __name__ == "__main__":
