@@ -9,16 +9,18 @@ Requirement:
 {requirement}
 
 Generate test cases in a structured table with the following columns:
-id, title, preconditions, steps, expectedResults
+title, preconditions, step, expectedResult
 
-- Ensure each test case is clear, actionable, and easy to follow.
-- The title must start with the verb "Verify".
-- Use a numbering scheme for IDs: TC001-{test_scenario} , TC002-{test_scenario}, etc. but if test_scenario is not provided, use a numbering scheme for IDs: TC001, TC002, etc.
-- All the list items should be in the following format: 1. Item. 2. Item. etc.
-- Cover visibility, functionality, and edge cases if applicable.
-- If some information is missing in the requirement, make reasonable assumptions.
-- Avoid over-engineering the test cases.
-- Merge the test cases if they are similar. For example, checking invalid input in the form should be one test case.
+Formatting rules:
+- Each step must be a separate row in the table (do not group steps in a single cell).
+- The column "step" should contain exactly one action step.
+- The column "expectedResult" should describe the outcome of that specific step.
+- Show the title and preconditions only on the first row of the test case. For subsequent rows of the same test case, leave those cells blank.
+- The title must follow this format: {test_scenario}: Verify [details].
+- Ensure steps are clear, sequential, and actionable.
+- Cover visibility, functionality, and edge cases where applicable.
+- If information is missing, make reasonable assumptions.
+- Avoid over-engineering or creating redundant test cases.
 
 Return the output as a CSV or markdown table.
 """
