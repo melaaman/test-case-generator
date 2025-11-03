@@ -22,16 +22,13 @@ def _print_markdown_table(rows: list[list[str]]) -> None:
     print("|" + "|".join(["---"] * len(header)) + "|")
 
     last_title = None
-    last_preconditions = None
 
     for row in data_rows:
-        title, preconditions, step, expected = row
+        title, step, test_data, expected, component, version = row
 
-        # Show title/preconditions only if they change
+        # Show title only if it changes
         show_title = title if title != last_title else ""
-        show_pre = preconditions if preconditions != last_preconditions else ""
 
-        print(f"| {show_title} | {show_pre} | {step} | {expected} |")
+        print(f"| {show_title} | {step} | {test_data} | {expected} | {component} | {version} |")
 
         last_title = title
-        last_preconditions = preconditions

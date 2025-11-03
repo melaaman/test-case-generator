@@ -10,5 +10,5 @@ def export_to_csv(requirement, test_scenario, filename="output/testcases.csv"):
         if not table_rows:
             return
 
-        writer.writerow(["title", "preconditions", "step", "expectedResult"]) # Header
+        writer.writerow(["Test name", "Test step", "Test data", "Expected result", "Component", "Version"]) # Header
         writer.writerows(table_rows[1:])  # Remaining rows
